@@ -1,7 +1,7 @@
 # cairopal • [![Tests](https://github.com/a5f9t4/cairopal/actions/workflows/tests.yml/badge.svg)](https://github.com/a5f9t4/cairopal/actions/workflows/tests.yml) [![Lints](https://github.com/a5f9t4/cairopal/actions/workflows/lints.yml/badge.svg)](https://github.com/a5f9t4/cairopal/actions/workflows/lints.yml) ![GitHub](https://img.shields.io/github/license/a5f9t4/cairopal) ![GitHub package.json version](https://img.shields.io/github/package-json/v/a5f9t4/cairopal) ![Vercel Deployment](https://img.shields.io/github/deployments/a5f9t4/cairopal/production?label=vercel)
 
 
-**Flexible** **Starknet** Dapp Template.
+**Modern**, **Flexible** Starknet Dapp Template.
 
 
 ## Developing
@@ -33,9 +33,10 @@ yarn test
 
 ## Acknowledgements
 
-Big thanks to:
-
 - [StarkWare](https://starkware.co/)
+- [Starknet.js](https://github.com/seanjameshan/starknet.js)
+- [Argent-x](https://github.com/argentlabs/argent-x)
+- [Fracek's React, Starknet Boilerplate](https://github.com/fracek/starknet-react-example)
 - [OpenZeppelin](https://github.com/OpenZeppelin/cairo-contracts)
 
 ## Security

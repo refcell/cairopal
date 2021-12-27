@@ -1,15 +1,14 @@
 import { Box } from "@chakra-ui/react";
 
 import CTASection from "components/samples/CTASection";
-// import SomeImage from "components/samples/SomeImage";
 import SomeText from "components/samples/SomeText";
+import { Transactions } from "components/wallet";
 
 const Home = () => {
   return (
-    <Box mb={8} w="full" d="flex" flexDirection="column">
+    <Box mb={8} w="full" h="full" d="flex" flexDirection="column">
       <SomeText />
-      <Box flex="1 1 auto" />
-      {/* <SomeImage /> */}
+      <Transactions />
       <CTASection />
     </Box>
   );

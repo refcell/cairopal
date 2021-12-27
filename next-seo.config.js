@@ -1,7 +1,7 @@
 /** @type {import('next-seo').DefaultSeoProps} */
 const defaultSEOConfig = {
   title: "cairopal",
-  titleTemplate: "%s | cairopal",
+  titleTemplate: "%s",
   defaultTitle: "cairopal",
   description: "Flexible Starknet Dapp Template",
   canonical: "https://nextarter-chakra.sznm.dev",
