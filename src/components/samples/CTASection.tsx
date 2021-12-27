@@ -1,7 +1,7 @@
-import { Box, Button, Code, Flex, Image, Link } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Link } from "@chakra-ui/react";
 import { AiFillGithub } from "react-icons/ai";
 
-const repoLink = "https://github.com/sozonome/nextarter-chakra";
+const repoLink = "https://github.com/a5f9t4/cairopal";
 
 const CTASection = () => {
   return (
@@ -10,7 +10,7 @@ const CTASection = () => {
         <Link
           aria-label="Deploy to Vercel"
           isExternal
-          href="https://vercel.com/import/git?s=https://github.com/sozonome/nextarter-chakra"
+          href="https://vercel.com/import/git?s=https://github.com/a5f9t4/cairopal"
         >
           <Image src="https://vercel.com/button" alt="Vercel deploy button" />
         </Link>
@@ -18,7 +18,7 @@ const CTASection = () => {
         <Link
           aria-label="Deploy to Netlify"
           isExternal
-          href="https://app.netlify.com/start/deploy?repository=https://github.com/sozonome/nextarter-chakra"
+          href="https://app.netlify.com/start/deploy?repository=https://github.com/a5f9t4/cairopal"
         >
           <Image
             src="https://www.netlify.com/img/deploy/button.svg"
@@ -27,22 +27,15 @@ const CTASection = () => {
         </Link>
       </Flex>
 
-      <Box marginY={2}>
-        <Code>npx degit sozonome/nextarter-chakra {"<YOUR_APP_NAME>"}</Code>
-        <br />
-
+      <Flex justifyContent="center" alignItems="center" gridGap={2}>
         <Button
-          marginTop={2}
           as="a"
-          href="https://github.com/sozonome/nextarter-chakra/generate"
+          href="https://github.com/a5f9t4/cairopal/generate"
           target="_blank"
           size="sm"
         >
           Use This Template
         </Button>
-      </Box>
-
-      <Flex justifyContent="center" alignItems="center" gridGap={2}>
         <Button
           as="a"
           href={repoLink}
@@ -55,7 +48,7 @@ const CTASection = () => {
         <Link href={repoLink} isExternal>
           <Image
             align="center"
-            src="https://img.shields.io/github/stars/sozonome/nextarter-chakra?style=social"
+            src="https://img.shields.io/github/stars/a5f9t4/cairopal?style=social"
             alt="github stars"
           />
         </Link>

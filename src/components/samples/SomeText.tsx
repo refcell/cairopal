@@ -15,17 +15,18 @@ const SomeText = () => {
   return (
     <>
       <Heading as="h2" fontSize="3xl">
-        Hello
+        Hello, anon
       </Heading>
 
       <Box
         backgroundColor={colorMode === "light" ? "gray.200" : "gray.500"}
         padding={4}
+        marginTop={4}
         borderRadius={4}
       >
-        <Box fontSize={textSize}>
-          This is a Next.js app with Chakra-UI and TypeScript setup.
-        </Box>
+        <Box
+          fontSize={textSize}
+        >{`<insert flexible Starknet dapp template>`}</Box>
       </Box>
     </>
   );

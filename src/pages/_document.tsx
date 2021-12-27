@@ -11,7 +11,7 @@ import * as React from "react";
 
 import createEmotionCache from "styles/createEmotionCache";
 
-const APP_NAME = "nextarter-chakra";
+const APP_NAME = "cairopal";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
