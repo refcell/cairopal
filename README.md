@@ -1,4 +1,4 @@
-# cairopal • [![Tests](https://github.com/a5f9t4/cairopal/actions/workflows/tests.yml/badge.svg)](https://github.com/a5f9t4/cairopal/actions/workflows/tests.yml) [![Lints](https://github.com/a5f9t4/cairopal/actions/workflows/lints.yml/badge.svg)](https://github.com/a5f9t4/cairopal/actions/workflows/lints.yml) ![GitHub](https://img.shields.io/github/license/a5f9t4/cairopal) ![GitHub package.json version](https://img.shields.io/github/package-json/v/a5f9t4/cairopal)
+# cairopal • [![Tests](https://github.com/a5f9t4/cairopal/actions/workflows/tests.yml/badge.svg)](https://github.com/a5f9t4/cairopal/actions/workflows/tests.yml) [![Lints](https://github.com/a5f9t4/cairopal/actions/workflows/lints.yml/badge.svg)](https://github.com/a5f9t4/cairopal/actions/workflows/lints.yml) ![GitHub](https://img.shields.io/github/license/a5f9t4/cairopal) ![GitHub package.json version](https://img.shields.io/github/package-json/v/a5f9t4/cairopal) ![Vercel Deployment](https://img.shields.io/github/deployments/a5f9t4/cairopal/production?label=vercel)
 
 
 **Flexible** **Starknet** Dapp Template.
