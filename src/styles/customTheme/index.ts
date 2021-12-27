@@ -1,15 +1,15 @@
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme } from "@chakra-ui/react";
 
-import colors from './colors';
-import Button from './components/button';
-import fonts from './fonts';
+import colors from "./colors";
+import Button from "./components/button";
+import fonts from "./fonts";
 
 const customTheme = extendTheme({
-	fonts,
-	colors,
-	components: {
-		Button,
-	},
+  fonts,
+  colors,
+  components: {
+    Button,
+  },
 });
 
 export default customTheme;
