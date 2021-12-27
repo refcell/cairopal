@@ -1,7 +1,8 @@
 /* Global Styling here */
 
-html, body {
-  height: 100%
+html,
+body {
+  height: 100%;
 }
 
 #__next {

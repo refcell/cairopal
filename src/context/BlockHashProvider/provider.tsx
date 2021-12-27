@@ -30,7 +30,5 @@ export function BlockHashProvider({
     return () => clearInterval(intervalId);
   }, [interval, fetchBlockHash]);
 
-  return (
-    <BlockHashContext.Provider value={blockHash} children={children} />
-  );
+  return <BlockHashContext.Provider value={blockHash} children={children} />;
 }
