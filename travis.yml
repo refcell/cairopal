@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- 12
+cache: yarn
+before_script:
+- yarn
+script:
+- yarn lint:check
+- yarn build
+deploy:
+  provider: heroku
+  repo: a5f9t4/cairopal
+  # api_key: cb0fde8c-74d4-439c-ac86-f7a2dbba0f46
+  app:
+    develop: cairopal-staging
+    master: cairopal-prod
+  skip_cleanup: 'true'
