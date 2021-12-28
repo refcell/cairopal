@@ -80,7 +80,7 @@ const MintTokens = () => {
             borderRadius={4}
           >
             <Box fontSize={textSize}>
-              Connect your wallet to view a list of your transactions.
+              Connect your wallet to mint test tokens.
             </Box>
           </Box>
         )}

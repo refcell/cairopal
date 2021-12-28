@@ -66,7 +66,9 @@ const useStarknetManager = (): StarknetState => {
 
   const setConnected = React.useCallback(async (con) => {
     dispatch({ type: "set_connected", con });
-    dispatch({ type: "set_account", account: "" });
+    if (!con) {
+      dispatch({ type: "set_account", account: "" });
+    }
   }, []);
 
   return { account, connected, setConnected, connectBrowserWallet, library };

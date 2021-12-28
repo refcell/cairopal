@@ -11,9 +11,6 @@ const Transactions = () => {
     sm: "md",
   });
 
-  // eslint-disable-next-line no-console
-  console.log("Transactions:", transactions);
-
   return (
     <Box>
       <Text as="h2" marginTop={4} fontSize="2xl">
