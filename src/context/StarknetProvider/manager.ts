@@ -56,6 +56,21 @@ const useStarknetManager = (): StarknetState => {
 
   const { account, connected, library } = state;
 
+  const checkMissingWallet = React.useCallback(async () => {
+    try {
+      await starknet.enable();
+    } catch (e) {
+      toast.error("⚠️ Argent-X wallet extension missing!", {
+        position: "top-left",
+        autoClose: 4000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    }
+  }, [starknet]);
+
   const connectBrowserWallet = React.useCallback(async () => {
     try {
       // eslint-disable-next-line @typescript-eslint/no-shadow
@@ -83,7 +98,14 @@ const useStarknetManager = (): StarknetState => {
     }
   }, []);
 
-  return { account, connected, setConnected, connectBrowserWallet, library };
+  return {
+    account,
+    connected,
+    setConnected,
+    connectBrowserWallet,
+    checkMissingWallet,
+    library,
+  };
 };
 
 export default useStarknetManager;
