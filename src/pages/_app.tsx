@@ -2,6 +2,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { EmotionCache } from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
+import { ToastContainer } from "material-react-toastify";
 import { DefaultSeo } from "next-seo";
 import { AppProps } from "next/app";
 import Head from "next/head";
@@ -9,11 +10,14 @@ import "@fontsource/lexend/latin.css";
 
 import defaultSEOConfig from "../../next-seo.config";
 import { Layout } from "components/layout";
+// eslint-disable-next-line import/order
 import {
   BlockHashProvider,
   StarknetProvider,
   TransactionsProvider,
 } from "context";
+
+import "material-react-toastify/dist/ReactToastify.css";
 import createEmotionCache from "styles/createEmotionCache";
 import customTheme from "styles/customTheme";
 import "styles/globals.css";
@@ -43,6 +47,7 @@ const MyApp = ({
                 />
               </Head>
               <DefaultSeo {...defaultSEOConfig} />
+              <ToastContainer />
               <Layout>
                 <Component {...pageProps} />
               </Layout>

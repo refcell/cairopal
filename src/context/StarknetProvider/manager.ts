@@ -1,4 +1,5 @@
 import { getStarknet } from "@argent/get-starknet";
+import { toast } from "material-react-toastify";
 import React from "react";
 import { defaultProvider, ProviderInterface } from "starknet";
 
@@ -56,11 +57,22 @@ const useStarknetManager = (): StarknetState => {
   const { account, connected, library } = state;
 
   const connectBrowserWallet = React.useCallback(async () => {
-    // eslint-disable-next-line @typescript-eslint/no-shadow
-    const [account] = await starknet.enable();
-    dispatch({ type: "set_account", account });
-    if (starknet.signer) {
-      dispatch({ type: "set_provider", provider: starknet.signer });
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-shadow
+      const [account] = await starknet.enable();
+      dispatch({ type: "set_account", account });
+      if (starknet.signer) {
+        dispatch({ type: "set_provider", provider: starknet.signer });
+      }
+    } catch (e) {
+      toast.error("⚠️ Argent-X wallet extension missing!", {
+        position: "top-left",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     }
   }, [starknet]);
 
