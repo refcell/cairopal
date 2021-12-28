@@ -6,6 +6,7 @@ import { StarknetState } from "./model";
 
 interface StarknetManagerState {
   account?: string;
+  connected?: boolean;
   library: ProviderInterface;
 }
 
@@ -19,7 +20,12 @@ interface SetProvider {
   provider: ProviderInterface;
 }
 
-type Action = SetAccount | SetProvider;
+interface SetConnected {
+  type: "set_connected";
+  con: boolean;
+}
+
+type Action = SetAccount | SetProvider | SetConnected;
 
 function reducer(
   state: StarknetManagerState,
@@ -31,6 +37,9 @@ function reducer(
     }
     case "set_provider": {
       return { ...state, library: action.provider };
+    }
+    case "set_connected": {
+      return { ...state, connected: action.con };
     }
     default: {
       return state;
@@ -44,11 +53,13 @@ const useStarknetManager = (): StarknetState => {
     library: defaultProvider,
   });
 
-  const { account, library } = state;
+  const { account, connected, library } = state;
+
+  const setConnected = React.useCallback(async (con) => {
+    dispatch({ type: "set_connected", con });
+  }, []);
 
   const connectBrowserWallet = React.useCallback(async () => {
-    // eslint-disable-next-line no-console
-    console.log("In connectBrowserWallet func");
     // eslint-disable-next-line @typescript-eslint/no-shadow
     const [account] = await starknet.enable();
     dispatch({ type: "set_account", account });
@@ -57,7 +68,7 @@ const useStarknetManager = (): StarknetState => {
     }
   }, [starknet]);
 
-  return { account, connectBrowserWallet, library };
+  return { account, connected, setConnected, connectBrowserWallet, library };
 };
 
 export default useStarknetManager;
