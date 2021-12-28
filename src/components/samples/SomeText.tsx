@@ -26,14 +26,14 @@ const SomeText = () => {
           : "anon"}
       </Heading>
 
-      {account && (
+      {!account && (
         <Box
           backgroundColor={colorMode === "light" ? "gray.200" : "gray.500"}
           padding={4}
           marginTop={4}
           borderRadius={4}
         >
-          <Box fontSize={textSize}>Connect your wallet!</Box>
+          <Box fontSize={textSize}>Connect your wallet to interact!</Box>
         </Box>
       )}
     </>

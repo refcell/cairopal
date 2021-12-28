@@ -1,9 +1,10 @@
 import { Box, Text, useBreakpointValue, useColorMode } from "@chakra-ui/react";
 
-import { useTransactions } from "context";
+import { useStarknet, useTransactions } from "context";
 
 const Transactions = () => {
   const { transactions } = useTransactions();
+  const { connected } = useStarknet();
   const { colorMode } = useColorMode();
   const textSize = useBreakpointValue({
     base: "xs",
@@ -14,11 +15,13 @@ const Transactions = () => {
   console.log("Transactions:", transactions);
 
   return (
-    <Box flex="1 1 auto">
+    <Box>
       <Text as="h2" marginTop={4} fontSize="2xl">
         Transactions
       </Text>
-      {transactions !== undefined && transactions.length > 0 ? (
+      {connected &&
+        transactions !== undefined &&
+        transactions.length > 0 &&
         transactions.map((tx) => {
           return (
             <Box
@@ -30,8 +33,8 @@ const Transactions = () => {
               <Box fontSize={textSize}>{tx}</Box>
             </Box>
           );
-        })
-      ) : (
+        })}
+      {connected && (transactions === undefined || transactions.length === 0) && (
         <Box
           backgroundColor={colorMode === "light" ? "gray.200" : "gray.500"}
           padding={4}
@@ -39,6 +42,18 @@ const Transactions = () => {
           borderRadius={4}
         >
           <Box fontSize={textSize}>No Transactions</Box>
+        </Box>
+      )}
+      {!connected && (
+        <Box
+          backgroundColor={colorMode === "light" ? "gray.200" : "gray.500"}
+          padding={4}
+          marginTop={4}
+          borderRadius={4}
+        >
+          <Box fontSize={textSize}>
+            Connect your wallet to view a list of your transactions.
+          </Box>
         </Box>
       )}
     </Box>
