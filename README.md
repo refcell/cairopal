@@ -36,7 +36,7 @@ yarn test
 - [StarkWare](https://starkware.co/)
 - [Starknet.js](https://github.com/seanjameshan/starknet.js)
 - [Argent-x](https://github.com/argentlabs/argent-x)
-- [Fracek's React, Starknet Boilerplate](https://github.com/fracek/starknet-react-example)
+- [Auclantis's starknet-react](https://github.com/auclantis/starknet-react)
 - [OpenZeppelin](https://github.com/OpenZeppelin/cairo-contracts)
 
 ## Security
