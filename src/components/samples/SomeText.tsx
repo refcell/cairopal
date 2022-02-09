@@ -4,8 +4,7 @@ import {
   useBreakpointValue,
   useColorMode,
 } from "@chakra-ui/react";
-
-import { useStarknet } from "context";
+import { useStarknet } from '@starknet-react/core'
 
 const SomeText = () => {
   const { colorMode } = useColorMode();
@@ -21,8 +20,8 @@ const SomeText = () => {
         Hello,{" "}
         {account
           ? `${account.substring(0, 4)}...${account.substring(
-              account.length - 4
-            )}`
+            account.length - 4
+          )}`
           : "anon"}
       </Heading>
 

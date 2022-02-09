@@ -1,28 +1,12 @@
 import { Button } from "@chakra-ui/react";
 import { useEffect } from "react";
-
-import { useStarknet } from "context";
+import { useStarknet } from '@starknet-react/core'
 
 const WalletConnect = () => {
-  const {
-    account,
-    connected,
-    setConnected,
-    connectBrowserWallet,
-    checkMissingWallet,
-  } = useStarknet();
 
-  useEffect(() => {
-    checkMissingWallet();
-  }, [checkMissingWallet]);
+  const { account, hasStarknet, connectBrowserWallet, library, error } = useStarknet()
 
-  useEffect(() => {
-    if (account && account.length > 0) {
-      setConnected(true);
-    }
-  }, [account, setConnected, connected]);
-
-  return !connected ? (
+  return !account ? (
     <Button
       ml="4"
       textDecoration="none !important"
@@ -40,14 +24,14 @@ const WalletConnect = () => {
       textDecoration="none !important"
       outline="none !important"
       boxShadow="none !important"
-      onClick={() => {
-        setConnected(false);
-      }}
+      // HACK: refresh to disconnect
+      // TODO: actually disconnect when supported in starknet-react
+      onClick={() => { window.location.reload(); }}
     >
       {account
         ? `${account.substring(0, 4)}...${account.substring(
-            account.length - 4
-          )}`
+          account.length - 4
+        )}`
         : "No Account"}
     </Button>
   );

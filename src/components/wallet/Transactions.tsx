@@ -1,10 +1,23 @@
 import { Box, Text, useBreakpointValue, useColorMode } from "@chakra-ui/react";
+import { Transaction, useStarknet, useStarknetTransactionManager } from '@starknet-react/core';
 
-import { useStarknet, useTransactions } from "context";
+function TransactionItem({
+  transaction,
+  onClick,
+}: {
+  transaction: Transaction
+  onClick: () => void
+}) {
+  return (
+    <div>
+      {transaction.status}: {transaction.transactionHash} <button onClick={onClick}>remove</button>
+    </div>
+  )
+}
 
 const Transactions = () => {
-  const { transactions } = useTransactions();
-  const { connected } = useStarknet();
+  const { removeTransaction, transactions } = useStarknetTransactionManager();
+  const { account } = useStarknet();
   const { colorMode } = useColorMode();
   const textSize = useBreakpointValue({
     base: "xs",
@@ -16,22 +29,18 @@ const Transactions = () => {
       <Text as="h2" marginTop={4} fontSize="2xl">
         Transactions
       </Text>
-      {connected &&
+      {account &&
         transactions !== undefined &&
         transactions.length > 0 &&
-        transactions.map((tx) => {
-          return (
-            <Box
-              backgroundColor={colorMode === "light" ? "gray.200" : "gray.500"}
-              padding={4}
-              marginTop={4}
-              borderRadius={4}
-            >
-              <Box fontSize={textSize}>{tx}</Box>
-            </Box>
-          );
-        })}
-      {connected && (transactions === undefined || transactions.length === 0) && (
+        transactions.map((tx, index) => (
+          <TransactionItem
+            key={index}
+            transaction={tx}
+            onClick={() => removeTransaction(tx.transactionHash)}
+          />
+        ))
+      }
+      {account && (transactions === undefined || transactions.length === 0) && (
         <Box
           backgroundColor={colorMode === "light" ? "gray.200" : "gray.500"}
           padding={4}
@@ -41,7 +50,7 @@ const Transactions = () => {
           <Box fontSize={textSize}>No Transactions</Box>
         </Box>
       )}
-      {!connected && (
+      {!account && (
         <Box
           backgroundColor={colorMode === "light" ? "gray.200" : "gray.500"}
           padding={4}
