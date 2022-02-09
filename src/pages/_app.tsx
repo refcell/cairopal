@@ -5,7 +5,7 @@ import { CacheProvider } from "@emotion/react";
 import { ToastContainer } from "material-react-toastify";
 import { DefaultSeo } from "next-seo";
 import { AppProps } from "next/app";
-import { StarknetProvider } from '@starknet-react/core'
+import { StarknetProvider } from "@starknet-react/core";
 import Head from "next/head";
 import "@fontsource/lexend/latin.css";
 

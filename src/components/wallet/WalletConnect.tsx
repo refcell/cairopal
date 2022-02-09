@@ -1,10 +1,9 @@
 import { Button } from "@chakra-ui/react";
-import { useEffect } from "react";
-import { useStarknet } from '@starknet-react/core'
+import { useStarknet } from "@starknet-react/core";
 
 const WalletConnect = () => {
 
-  const { account, hasStarknet, connectBrowserWallet, library, error } = useStarknet()
+  const { account, hasStarknet, connectBrowserWallet } = useStarknet();
 
   return !account ? (
     !hasStarknet ? (

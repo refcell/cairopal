@@ -4,7 +4,7 @@ import {
   useBreakpointValue,
   useColorMode,
 } from "@chakra-ui/react";
-import { useStarknet } from '@starknet-react/core'
+import { useStarknet } from "@starknet-react/core";
 
 const SomeText = () => {
   const { colorMode } = useColorMode();

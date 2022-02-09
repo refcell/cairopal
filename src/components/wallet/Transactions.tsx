@@ -1,5 +1,5 @@
 import { Box, Text, useBreakpointValue, useColorMode } from "@chakra-ui/react";
-import { Transaction, useStarknet, useStarknetTransactionManager } from '@starknet-react/core';
+import { Transaction, useStarknet, useStarknetTransactionManager } from "@starknet-react/core";
 
 function TransactionItem({
   transaction,

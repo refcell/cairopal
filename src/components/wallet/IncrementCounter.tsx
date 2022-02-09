@@ -21,7 +21,7 @@ const IncrementCounter = () => {
     abi: CounterAbi as Abi[],
     address: CONTRACT_ADDRESS,
   });
-  const { data, loading, error, reset, invoke } = useStarknetInvoke({
+  const { invoke } = useStarknetInvoke({
     contract,
     method: "incrementCounter",
   });
