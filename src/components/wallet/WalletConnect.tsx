@@ -7,17 +7,28 @@ const WalletConnect = () => {
   const { account, hasStarknet, connectBrowserWallet, library, error } = useStarknet()
 
   return !account ? (
-    <Button
-      ml="4"
-      textDecoration="none !important"
-      outline="none !important"
-      boxShadow="none !important"
-      onClick={() => {
-        connectBrowserWallet();
-      }}
-    >
-      Connect Wallet
-    </Button>
+    !hasStarknet ? (
+      <Button
+        ml="4"
+        textDecoration="none !important"
+        outline="none !important"
+        boxShadow="none !important"
+      >
+        <a href="https://github.com/argentlabs/argent-x">Get Argent-X</a>
+      </Button>
+    ) : (
+      <Button
+        ml="4"
+        textDecoration="none !important"
+        outline="none !important"
+        boxShadow="none !important"
+        onClick={() => {
+          connectBrowserWallet();
+        }}
+      >
+        Connect Wallet
+      </Button>
+    )
   ) : (
     <Button
       ml="4"
